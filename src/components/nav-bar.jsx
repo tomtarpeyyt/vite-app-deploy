@@ -1,10 +1,32 @@
-import { Menu, X } from 'lucide-react';
+import { Menu, X, MoonStar, SunMoon } from 'lucide-react';
 import logo from '../assets/logo.png';
 import { navItems } from '../constants';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 
 const Navbar = () => {
     const [ navOpen, setNavOpen ] = useState(false);
+    const [isDarkMode, setIsDarkMode] = useState(true);
+
+    const toggleDarkMode = () => {
+        setIsDarkMode(!isDarkMode);
+    };
+
+    useEffect(() => {
+        const body = document.body;
+    
+        if (isDarkMode) {
+          body.classList.add('dark-mode');
+          body.classList.remove('light-mode');
+        } else {
+          body.classList.add('light-mode');
+          body.classList.remove('dark-mode');
+        }
+    
+        return () => {
+          body.classList.remove('dark-mode');
+          body.classList.remove('light-mode');
+        };
+      }, [isDarkMode]);
     
     const toggleNavOpen = () => {
         setNavOpen(!navOpen);
@@ -26,8 +48,11 @@ const Navbar = () => {
                             ))}
                         </ul>
                         <div className="hidden lg:flex justify-center items-center space-x-12">
-                        <a href="#" className="border px-3 py-2 rounded-md">Sign In</a>
-                        <a href="#" className="bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-2 rounded-md">Create an Account</a>
+                            <button onClick={toggleDarkMode}>
+                                {isDarkMode ? <MoonStar /> : <SunMoon />}
+                            </button>
+                            <a href="#" className="border px-3 py-2 rounded-md">Sign In</a>
+                            <a href="#" className="bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-2 rounded-md">Create an Account</a>
                         </div>
                         <div className="lg:hidden md:flex flex-col justify-end">
                             <button onClick={ toggleNavOpen }>
@@ -36,27 +61,21 @@ const Navbar = () => {
                         </div>
                     </div>
                     {navOpen && (
-          <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
-            <ul className='mb-6'>
-              {navItems.map((item, index) => (
-                <li key={index} className="py-4">
-                  <a href={ item.href }>{ item.text }</a>
-                </li>
-              ))}
-            </ul>
-            <div className="flex space-x-6">
-              <a href="#" className="px-3 py-2 border rounded-md">
-                Sign In
-              </a>
-              <a
-                href="#"
-                className="px-3 py-2 rounded-md bg-gradient-to-r from-blue-500 to-blue-800"
-              >
-                Create an account
-              </a>
-            </div>
-          </div>
-        )}
+                        <div className="fixed right-0 z-20 bg-neutral-900 w-full p-12 flex flex-col justify-center items-center lg:hidden">
+                            <ul className='mb-6'>
+                            {navItems.map((item, index) => (
+                                <li key={index} className="py-4">
+                                <a href={ item.href }>{ item.text }</a>
+                                </li>
+                            ))}
+                            </ul>
+                            <div className="flex space-x-6">
+                                <button onClick={ toggleDarkMode }>{ isDarkMode ? <MoonStar /> : <SunMoon /> }</button>
+                                <a href="#" className="px-3 py-2 border rounded-md">Sign In</a>
+                                <a href="#" className="px-3 py-2 rounded-md bg-gradient-to-r from-blue-500 to-blue-800">Create an account</a>
+                            </div>
+                        </div>
+                    )}
                 </div>
             </nav>
 
