@@ -12,9 +12,11 @@ export default function App() {
     <>
       <Navbar />
       <HeroSection />
+      { /* TODO: maybe a Features section? */ }
       <WorkSection />
       <PricingSection />
       <ProductSection />
+      { /* TODO: Footer */ }
     </>
   )
 }

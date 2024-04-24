@@ -1,3 +1,10 @@
+import product1 from '../assets/products/product1.jpg';
+import product2 from '../assets/products/product2.jpg';
+import product3 from '../assets/products/product3.jpg';
+import product4 from '../assets/products/product4.jpg';
+import product5 from '../assets/products/product5.jpg';
+import product6 from '../assets/products/product6.jpg';
+
 export const navItems = [
     { text: "Link1", href: "#" },
     { text: "Link2", href: "#" },
@@ -55,4 +62,43 @@ export const PricingOptions = [
             "Information about Feature 4"
         ]
     }
-]
+];
+
+export const productList = [
+    {
+        name: "Product 1",
+        description: "this is a product",
+        image: product1,
+        text: "lorem ipsum dolor sit amet. concuestador cavientor i like to party a lot. i do da cha cha. i do like to do da cha cha"
+    },
+    {
+        name: "Product 2",
+        description: "this is a product",
+        image: product3,
+        text: "lorem ipsum dolor sit amet. concuestador cavientor i like to party a lot. i do da cha cha. i do like to do da cha cha"
+    },
+    {
+        name: "Product 3",
+        description: "this is a product",
+        image: product1,
+        text: "lorem ipsum dolor sit amet. concuestador cavientor i like to party a lot. i do da cha cha. i do like to do da cha cha"
+    },
+    {
+        name: "Product 4",
+        description: "this is a product",
+        image: product4,
+        text: "lorem ipsum dolor sit amet. concuestador cavientor i like to party a lot. i do da cha cha. i do like to do da cha cha"
+    },
+    {
+        name: "Product 5",
+        description: "this is a product",
+        image: product5,
+        text: "lorem ipsum dolor sit amet. concuestador cavientor i like to party a lot. i do da cha cha. i do like to do da cha cha"
+    },
+    {
+        name: "Product 6",
+        description: "this is a product",
+        image: product6,
+        text: "lorem ipsum dolor sit amet. concuestador cavientor i like to party a lot. i do da cha cha. i do like to do da cha cha"
+    },
+];
