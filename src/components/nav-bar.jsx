@@ -33,7 +33,7 @@ const Navbar = () => {
     }
     return (
         <>
-            <nav className="sticky top-0 z-50 py-3 background-blur-lg border-b border-neutral-700/80">
+            <nav className="sticky top-0 z-50 py-3 backdrop-blur-lg border-b border-neutral-700/80">
                 <div className="container px-4 mx-auto relative lg:text-sm">
                     <div className="flex justify-between items-center">
                         <div className="flex items-center flex-shrink-0">
@@ -52,7 +52,7 @@ const Navbar = () => {
                                 {isDarkMode ? <MoonStar /> : <SunMoon />}
                             </button>
                             <a href="#" className="border px-3 py-2 rounded-md">Sign In</a>
-                            <a href="#" className="bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-2 rounded-md">Create an Account</a>
+                            <a href="#" className="bg-gradient-to-r from-blue-500 to-blue-800 px-3 py-2 rounded-md text-white">Create an Account</a>
                         </div>
                         <div className="lg:hidden md:flex justify-end">
                         <button className="mr-4" onClick={ toggleDarkMode }>{ isDarkMode ? <MoonStar /> : <SunMoon /> }</button>
