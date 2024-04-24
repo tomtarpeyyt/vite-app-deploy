@@ -1,10 +1,11 @@
 import './App.css'
+import Navbar from './components/nav-bar';
 
 export default function App() {
 
   return (
-    <>  <h1 className="text-3xl text-red-500">time2code!</h1>
-      
+    <>
+      <Navbar />
     </>
   )
 }
